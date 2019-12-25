@@ -12,9 +12,13 @@ The instruction of commands has been clearly stated in the codes (see the parse_
 + python manually_cure.py dataset_filename k
 
 ### Dataset
-We provide all two fcps datasets which is from pycluster moduel:
-+ SAMPLE_LSUN.csv
-+ SAMPLE_TETRA.csv
+We provide all two fcps datasets which is from pyclustering moduel:
+
+**SAMPLE_LSUN.csv**
++ Each Line is a instance: feature1,feature2
+
+**SAMPLE_TETRA.csv**
++ Each Line is a instance: feature1,feature2,feature2
 
 ### Result
 We use SAMPLE_LSUN dataset and set k to be 3,the result are as follow:
