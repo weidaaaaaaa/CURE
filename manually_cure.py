@@ -5,13 +5,12 @@
 from pyclustering.cluster import cluster_visualizer
 import sys
 import math
-from pyclustering.samples.definitions import FCPS_SAMPLES
-from pyclustering.utils import read_sample
 import numpy as np
+import pandas as pd
 
 
 class CURE:
-    def __init__(self, data, k, distance_func, a=0.5, c=3):
+    def __init__(self, data, k, distance_func, a=0.5, c=15):
         '''
         @brief 构造函数
 
@@ -176,14 +175,25 @@ def euclidea_distance(i, j):
     return math.sqrt(result)
 
 
+def read_file(filename):
+    '''
+    @brief 读取csv文件数据，格式为feature1，feature2，feature3......
+
+    @param filename(str):文件路径
+
+    @return 返回格式为array的数据
+    '''
+    df = pd.read_csv(filename)
+    return np.array(df)
+
+
 if __name__ == '__main__':
     # 读取fcps数据集
-    sample = read_sample(FCPS_SAMPLES.SAMPLE_TETRA)
-    array_sample = np.array(sample)
+    array_sample = read_file(sys.argv[1])
     # 运行cure
-    clusters = CURE(array_sample, k=4, distance_func=euclidea_distance).run()
+    clusters = CURE(array_sample, k=int(sys.argv[2]), distance_func=euclidea_distance).run()
     print(clusters)
     # 可视化聚类结果
     visualizer = cluster_visualizer()
-    visualizer.append_clusters(clusters, sample)
+    visualizer.append_clusters(clusters, array_sample)
     visualizer.show()
