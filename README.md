@@ -21,11 +21,11 @@ We provide all two fcps datasets which is from pyclustering moduel:
 + Each Line is a instance: feature1,feature2,feature2
 
 ### Result
-We use SAMPLE_LSUN dataset and set k to be 3,the result are as follow:
+We use SAMPLE_LSUN dataset and set k to be 3,the result is as follow:
 
 ![avatar](2d.png) 
 
-We use SAMPLE_TETRA dataset and set k to be 4,the result are as follow:
+We use SAMPLE_TETRA dataset and set k to be 4,the result is as follow:
 
 ![avatar](3d.png)
 
